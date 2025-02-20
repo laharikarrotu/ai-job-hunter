@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.gradient-bg {
+  @apply bg-gradient-to-r from-primary-main to-secondary-main;
+}
+
+.card-hover {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+.nav-link {
+  @apply text-gray-700 hover:text-primary-main transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-primary-main text-white hover:bg-primary-dark transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-secondary-main text-white hover:bg-secondary-dark transition-colors duration-200;
+}
+
+/* Animation classes */
+.fade-in {
+  @apply opacity-0 animate-[fadeIn_0.5s_ease-in_forwards];
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
