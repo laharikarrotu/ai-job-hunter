@@ -16,6 +16,10 @@ export const theme = createTheme({
       default: '#f8fafc',
       paper: '#ffffff',
     },
+    text: {
+      primary: '#1e293b',
+      secondary: '#64748b',
+    },
     grey: {
       50: '#f8fafc',
       100: '#f1f5f9',
@@ -44,12 +48,17 @@ export const theme = createTheme({
       lineHeight: 1.2,
     },
     h2: {
-      fontSize: '2rem',
-      fontWeight: 600,
-      lineHeight: 1.3,
+      fontSize: '3rem',
+      fontWeight: 700,
+      lineHeight: 1.2,
     },
     h3: {
       fontSize: '1.5rem',
+      fontWeight: 600,
+      lineHeight: 1.4,
+    },
+    h5: {
+      fontSize: '1.25rem',
       fontWeight: 600,
       lineHeight: 1.4,
     },
@@ -63,9 +72,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: 'none',
-          borderRadius: '8px',
-          padding: '8px 16px',
-          fontWeight: 500,
+          fontWeight: 600,
         },
         contained: {
           boxShadow: 'none',
@@ -78,9 +85,8 @@ export const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: '12px',
-          boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1)',
-          border: '1px solid #e2e8f0',
+          borderRadius: '1rem',
+          boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
         },
       },
     },

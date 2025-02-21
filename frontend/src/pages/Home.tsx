@@ -13,77 +13,113 @@ import {
 import {
   Search as SearchIcon,
   AutoAwesome as AIIcon,
-  Speed as SpeedIcon
+  Speed as SpeedIcon,
+  Notifications
 } from '@mui/icons-material'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+  const navigate = useNavigate()
+
   return (
-    <Box>
-      {/* Hero Section */}
-      <Box className="gradient-bg py-20 text-white">
-        <Container maxWidth="md">
-          <Typography variant="h2" component="h1" className="text-center fade-in" gutterBottom>
+    <Box sx={{ 
+      minHeight: '100vh',
+      background: 'linear-gradient(to bottom right, #f8fafc, #e2e8f0)',
+      py: 8 
+    }}>
+      <Container maxWidth="lg">
+        <Box sx={{ textAlign: 'center', mb: 8 }}>
+          <Typography 
+            variant="h2" 
+            sx={{ 
+              fontWeight: 700,
+              color: '#1e293b',
+              mb: 2 
+            }}
+          >
             Find Your Dream Job with AI
           </Typography>
-          <Typography variant="h5" className="text-center mb-8 fade-in" paragraph>
-            Let our AI-powered platform match you with the perfect job opportunities
+          <Typography 
+            variant="h5" 
+            sx={{ 
+              color: '#64748b',
+              mb: 4 
+            }}
+          >
+            Let AI help you discover and apply to the perfect opportunities
           </Typography>
-          <Box className="flex justify-center space-x-4">
-            <Button
-              component={RouterLink}
-              to="/register"
-              variant="contained"
-              color="secondary"
-              size="large"
-              className="card-hover"
-            >
-              Get Started
-            </Button>
-            <Button
-              component={RouterLink}
-              to="/login"
-              variant="outlined"
-              className="text-white border-white hover:bg-white/10 card-hover"
-            >
-              Sign In
-            </Button>
-          </Box>
-        </Container>
-      </Box>
+          <Button
+            variant="contained"
+            size="large"
+            onClick={() => navigate('/register')}
+            sx={{
+              bgcolor: '#2563eb',
+              '&:hover': {
+                bgcolor: '#1d4ed8',
+              },
+              px: 6,
+              py: 1.5,
+              borderRadius: 2,
+            }}
+          >
+            Get Started
+          </Button>
+        </Box>
 
-      {/* Features Section */}
-      <Container maxWidth="lg" className="py-16">
         <Grid container spacing={4}>
-          {[
-            {
-              title: "Smart Job Matching",
-              icon: <SearchIcon color="primary" />,
-              description: "Our AI analyzes your skills and experience to find the best job matches"
-            },
-            {
-              title: "AI-Powered Applications",
-              icon: <AIIcon color="primary" />,
-              description: "Automated application process with smart resume tailoring"
-            },
-            {
-              title: "Real-time Updates",
-              icon: <SpeedIcon color="primary" />,
-              description: "Get instant notifications about application status and interviews"
-            }
-          ].map((feature, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Card className="h-full card-hover">
-                <CardHeader
-                  title={feature.title}
-                  avatar={feature.icon}
-                  className="text-primary-main"
-                />
-                <CardContent>
-                  <Typography>{feature.description}</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+          <Grid item xs={12} md={4}>
+            <Box sx={{
+              bgcolor: 'white',
+              p: 4,
+              borderRadius: 4,
+              boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
+              height: '100%',
+            }}>
+              <SearchIcon sx={{ fontSize: 40, color: '#2563eb', mb: 2 }} />
+              <Typography variant="h5" sx={{ fontWeight: 600, mb: 2 }}>
+                Smart Job Matching
+              </Typography>
+              <Typography color="text.secondary">
+                Our AI analyzes your skills and experience to find the best job matches
+              </Typography>
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} md={4}>
+            <Box sx={{
+              bgcolor: 'white',
+              p: 4,
+              borderRadius: 4,
+              boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
+              height: '100%',
+            }}>
+              <AIIcon sx={{ fontSize: 40, color: '#2563eb', mb: 2 }} />
+              <Typography variant="h5" sx={{ fontWeight: 600, mb: 2 }}>
+                AI-Powered Applications
+              </Typography>
+              <Typography color="text.secondary">
+                Automated application process with smart resume tailoring
+              </Typography>
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} md={4}>
+            <Box sx={{
+              bgcolor: 'white',
+              p: 4,
+              borderRadius: 4,
+              boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
+              height: '100%',
+            }}>
+              <Notifications sx={{ fontSize: 40, color: '#2563eb', mb: 2 }} />
+              <Typography variant="h5" sx={{ fontWeight: 600, mb: 2 }}>
+                Real-time Updates
+              </Typography>
+              <Typography color="text.secondary">
+                Get instant notifications about application status and interviews
+              </Typography>
+            </Box>
+          </Grid>
         </Grid>
       </Container>
     </Box>
